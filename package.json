@@ -1,0 +1,52 @@
+{
+  "name": "qms-memory",
+  "version": "1.0.0", 
+  "description": "Local TF-IDF memory search to replace failing built-in memory_search. No API keys required!",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js"
+  },
+  "scripts": {
+    "test": "node test.js"
+  },
+  "dependencies": {},
+  "peerDependencies": {},
+  "keywords": [
+    "openclaw",
+    "clawdbot", 
+    "memory",
+    "search",
+    "tfidf",
+    "local",
+    "offline",
+    "skill"
+  ],
+  "author": "Ben Sharpe <bsharpe@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bsharpe/openclaw-qms-memory.git"
+  },
+  "homepage": "https://github.com/bsharpe/openclaw-qms-memory#readme",
+  "bugs": {
+    "url": "https://github.com/bsharpe/openclaw-qms-memory/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "index.js",
+    "SKILL.md",
+    "README.md",
+    "test.js"
+  ],
+  "skill": {
+    "category": "memory",
+    "tags": ["search", "memory", "tfidf", "local"],
+    "dependencies": [],
+    "compatibility": {
+      "openclaw": ">=1.0.0"
+    }
+  }
+}
