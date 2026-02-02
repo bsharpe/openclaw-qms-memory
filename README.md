@@ -1,13 +1,30 @@
-# QMS Memory Search - OpenClaw Skill
+# OpenClaw Memory Search Fix - Local TF-IDF Alternative (No API Keys)
 
-**🚀 Drop-in replacement for broken built-in memory_search in OpenClaw**
+**🚀 Drop-in replacement for broken built-in memory_search | Fix "API key not found" errors**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![OpenClaw](https://img.shields.io/badge/OpenClaw-Skill-blue.svg)](https://openclaw.ai)
 
+## Common Errors This Fixes
+
+❌ `memory_search failed: OpenAI API key not found`  
+❌ `memory_search error: Google API key missing`  
+❌ `memory_search tool failed with status 500`  
+❌ `Cannot search memory files - API key required`  
+❌ `memory_search not working in OpenClaw`
+
+✅ **All fixed with QMS Memory Search - works offline, no API keys needed!**
+
 ## The Problem
 
-OpenClaw's built-in `memory_search` fails when OpenAI/Google API keys are missing, leaving agents unable to search their memory files. This affects many users who don't have or want to configure external API keys.
+OpenClaw's built-in `memory_search` fails when OpenAI/Google API keys are missing, leaving agents unable to search their memory files. Common issues include:
+
+- **memory_search failing** with API key errors
+- **Cannot search memory files** due to missing credentials  
+- **memory_search tool failed** in OpenClaw installations
+- **memory search not working** without external API setup
+
+This affects many users who don't have or want to configure external API keys for basic memory search functionality.
 
 ## The Solution
 
@@ -139,9 +156,17 @@ Force rebuild of search index.
 
 ## 🔧 Troubleshooting
 
-### No Results Found
+### "memory_search not working" / "memory search failing"
+- Replace built-in memory_search with QMS: `import { searchMemory } from './skills/qms-memory/index.js';`
+- Disable broken built-in: `{"memorySearch": {"sources": []}}`
+
+### "memory_search API key error" / "OpenAI API key not found"  
+- QMS Memory Search requires **no API keys** - works completely offline
+- Zero configuration needed - just install and use
+
+### "cannot search memory files" / "memory_search tool failed"
 - Ensure memory files exist (`MEMORY.md`, `memory/*.md`) in workspace root
-- Check that files contain the terms you're searching for
+- Check that files contain the terms you're searching for  
 - Try `await rebuildMemoryIndex()` to force refresh
 
 ### Index Not Updating  
@@ -160,6 +185,10 @@ Force rebuild of search index.
 **Speed:** Local TF-IDF indexing beats remote API calls
 **Cost:** No API usage fees or token consumption
 **Control:** Full control over indexing and search behavior
+
+## 🔍 Search Keywords
+
+`OpenClaw memory search broken` | `memory_search failing` | `memory search fix` | `OpenClaw API key error` | `memory_search not working` | `local memory search` | `offline memory search` | `TF-IDF search OpenClaw` | `memory_search alternative` | `no API key memory search` | `OpenClaw memory search replacement` | `memory search without API keys`
 
 ## 🤝 Contributing
 
